@@ -1,0 +1,25 @@
+{
+  "name": "just",
+  "displayName": "just-language",
+  "description": "syntax highlighting for the just language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "just",
+      "aliases": ["Just", "just"],
+      "extensions": [".just"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "just",
+      "scopeName": "source.just",
+      "path": "./syntaxes/just.tmLanguage.json"
+    }]
+  }
+}
