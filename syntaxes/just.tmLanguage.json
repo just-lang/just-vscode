@@ -1,9 +1,16 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"fileTypes": [
+		"just"
+	],
+	"firstLineMatch": "^#!.*\\bjust\\s*$",
 	"name": "Just",
 	"patterns": [
 		{
 			"include": "#keywords"
+		},
+		{
+			"include": "#comment"
 		},
 		{
 			"include": "#strings"
@@ -13,7 +20,26 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.just",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(module|function|struct|while|for|if|else|end)\\b"
+			}]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"include": "#comment_block"
+				},
+				{
+				"name": "comment.control.just",
+				"begin": "#",
+				"end": "\n"
+			}]
+		},
+		"comment_block": {
+			"patterns": [
+				{
+				"name": "comment.control.just",
+				"begin": "#>",
+				"end": "<#"
 			}]
 		},
 		"strings": {
