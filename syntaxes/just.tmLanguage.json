@@ -14,6 +14,9 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#character"
 		}
 	],
 	"repository": {
@@ -46,6 +49,17 @@
 			"name": "string.quoted.double.just",
 			"begin": "\"",
 			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.just",
+					"match": "\\\\."
+				}
+			]
+		},
+		"character": {
+			"name": "string.quoted.single.just",
+			"begin": "'",
+			"end": "'",
 			"patterns": [
 				{
 					"name": "constant.character.escape.just",
